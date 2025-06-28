@@ -23,8 +23,8 @@ char checkWinner() {
         {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Vertical
         {0, 4, 8}, {2, 4, 6}              // Diagonal
     };
-
-    for (int i = 0; i < 8; i++) {
+	int i;
+    for (i = 0; i < 8; i++) {
         if (board[winPatterns[i][0]] == board[winPatterns[i][1]] &&
             board[winPatterns[i][1]] == board[winPatterns[i][2]]) {
             return board[winPatterns[i][0]];
@@ -34,7 +34,8 @@ char checkWinner() {
 }
 
 bool isDraw() {
-    for (int i = 0; i < 9; i++) {
+    int i;
+	for (i = 0; i < 9; i++) {
         if (board[i] != 'X' && board[i] != 'O') {
             return false;
         }
@@ -43,13 +44,14 @@ bool isDraw() {
 }
 
 void resetBoard() {
-    for (int i = 0; i < 9; i++) {
+    int i;
+	for (i = 0; i < 9; i++) {
         board[i] = '1' + i;
     }
 }
 
 int main() {
-    while (true) {
+    while (1) {
         int choice;
         printf("Welcome to TIC TAC TOE\n");
         printf("Choose an option:\n1. PLAY\n2. EXIT\n-> ");
@@ -98,7 +100,5 @@ int main() {
         } else {
             printf("Invalid selection! Please try again.\n");
         }
-    }
-
-    return 0;
+	}
 }
