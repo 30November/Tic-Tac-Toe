@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+int i;
+
 char board[] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 void printBoard() {
@@ -23,7 +25,6 @@ char checkWinner() {
         {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // Vertical
         {0, 4, 8}, {2, 4, 6}              // Diagonal
     };
-	int i;
     for (i = 0; i < 8; i++) {
         if (board[winPatterns[i][0]] == board[winPatterns[i][1]] &&
             board[winPatterns[i][1]] == board[winPatterns[i][2]]) {
@@ -34,7 +35,6 @@ char checkWinner() {
 }
 
 bool isDraw() {
-    int i;
 	for (i = 0; i < 9; i++) {
         if (board[i] != 'X' && board[i] != 'O') {
             return false;
@@ -44,7 +44,6 @@ bool isDraw() {
 }
 
 void resetBoard() {
-    int i;
 	for (i = 0; i < 9; i++) {
         board[i] = '1' + i;
     }
